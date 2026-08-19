@@ -1,19 +1,10 @@
 import java.util.Scanner;
 public class Main {
-    public static void swap(int n, int[] arr){
-        int temp = arr[n];
-        arr[n]= arr[n+1];
-        arr[n+1] = temp;
-    }
-    public static void f(int n, int[] arr){
-        if(n == arr.length-1) return;
-        else {
-           if(arr[n] > arr[n+1]) swap (n, arr);
-            f(n+1, arr);
-            
-    }
-
-        
+    public static int max(int n, int[] arr){
+        if(n == 0) return arr[0];
+        int temp = max(n-1, arr);
+        if(temp<=arr[n]) return arr[n];
+        else return temp;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,8 +13,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        f(0, arr);
-        System.out.println(arr[arr.length-1]);
+        System.out.println(max(n-1, arr));
         // Please write your code here.
     }
 }
