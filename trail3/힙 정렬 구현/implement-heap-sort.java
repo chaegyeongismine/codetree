@@ -37,10 +37,6 @@ public class Main {
             arr[i] = sc.nextInt();
         }
         heap_sort(arr);
-        StringBuilder sb = new StringBuilder();
-        for(int i = 1; i <= n; i++) {
-            sb.append(arr[i]).append(" ");
-        }
-        System.out.print(sb);
-        }
+        for(int i =1; i<=n; i++) System.out.printf("%d ", arr[i]);
+    }
 }
